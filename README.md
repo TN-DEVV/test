@@ -1,5 +1,6 @@
-#BpmApp
-Description
+# BpmApp
+
+ Description
 This project is a ... . It involves the development of a Spring Boot application integrated with Keycloak for authentication and authorization. The application also includes functionalities related to process, cases and tasks management, history services, and API interactions from a React front-end.
 
 Table of Contents
