@@ -1,56 +1,89 @@
 # BpmApp
 
- Description
-This project is a ... . It involves the development of a Spring Boot application integrated with Keycloak for authentication and authorization. The application also includes functionalities related to process, cases and tasks management, history services, and API interactions from a React front-end.
+This project is a comprehensive system that integrates a Spring Boot application with Keycloak for robust authentication and authorization purposes. Alongside authentication features, the application facilitates functionalities for managing processes, cases, and tasks, in addition to offering extensive history services. Moreover, it seamlessly interacts with various APIs, all conveniently accessible from a React-based front-end interface.
+## Table of Contents
 
-Table of Contents
-BpmApp
-Description
-Table of Contents
-Technologies Used
-Setup
-Prerequisites
-Installation
-Running the Application
-Usage
-Contributing
-License
-Technologies Used
-Spring Boot
-Keycloak
-PostgreSQL
-pgAdmin
-ActiveMQ
-React
-Setup
-Prerequisites
-Docker
-Node.js
-Installation
-Clone the repository:
+- BpmApp
+    - Description
+    - Table of Contents
+    - Technologies Used
+    - Setup
+        - Prerequisites
+        - Installation
+        - Running the Application
+    - API Reference
+    - Environment Variables
 
-bash
-Copy code
-git clone <repository_url>
-Navigate to the project directory:
 
-bash
-Copy code
-cd <project_directory>
-cd Docker
+## Technologies Used
 
-Running the Application
-Start Docker:
+- Spring Boot
+- Keycloak
+- PostgreSQL
+- pgAdmin
+- ActiveMQ
+- React
+- typescript
 
-bash
-Copy code
-docker-compose up --build
 
-Usage
-[Instructions on how to use or interact with the application]
+## Setup
+### Prerequisites
 
-Contributing
-[Guidelines and information for contributing to the project]
+- Docker
+- Node.js
 
-License
-[License information for the project]
+### Installation
+1 - Clone the repository:
+
+```bash
+    git clone <repository_url>
+```
+
+2 - Navigate to the project directory:
+
+```bash
+    cd <project_directory>
+    cd Docker
+```
+
+3 - start docker \
+4 - run docker-compose 
+
+```bash
+    docker-compose up --build
+```
+
+
+## API Reference
+some of process api
+#### Get all processes Definition
+
+```http
+  GET process-api/definitions
+  Authorization: Bearer {your_access_token}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Authorization` | `string` | **Required**. Access token obtained from Keycloak
+
+#### Start process
+
+```http
+  POST process-api/start?processDefinitionKey=processDefinitionKey
+  Authorization: Bearer {your_access_token}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `processDefinitionKey` | `string` | **Required**. Process definition key
+| `Authorization` | `string` | **Required**. Access token obtained from Keycloak
+
+
+## Environment Variables
+
+To run this project, you will need to add the some environment variables to your .env files
+
+/Docker/.env \
+src/main/resources/flowable-ui/.env
+
